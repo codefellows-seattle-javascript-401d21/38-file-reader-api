@@ -5,14 +5,13 @@ import {signupRequest, signinRequest} from '../../action/auth-action'
 
 
 class Landing extends React.Component {
-  constructore(props) {
+  constructor(props) {
     super(props)
     this.redirect = this.redirect.bind(this)
   }
 
   redirect(path) {
     this.props.history.replace(path)
-    
   }
   render() {
     console.log('__LANDING_PROPS__', this.props)
@@ -25,6 +24,7 @@ class Landing extends React.Component {
       <div className="landing-container">
         <AuthForm
           auth={params.auth}
+          redirect={this.redirect}
           onComplete={onComplete}
         />
       </div>
