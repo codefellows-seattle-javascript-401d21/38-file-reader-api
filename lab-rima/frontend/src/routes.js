@@ -1,2 +1,2 @@
 export const PICTURES_ROUTE = '/photos';
-export const SETTING_ROUTE = '/setting';
+export const PROFILES_ROUTE = '/profiles';
