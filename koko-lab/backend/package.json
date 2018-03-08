@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Koko",
   "license": "MIT",
+  "engines": {
+    "node": "9.3.0"
+  },
   "jest": {
     "verbose": true,
     "testEnvironment": "node",
