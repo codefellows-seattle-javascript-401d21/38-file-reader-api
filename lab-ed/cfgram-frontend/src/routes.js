@@ -1,1 +1,1 @@
-export const PICTURE_ROUTE = '/photos'
+export const PICTURES_ROUTE = '/photos'

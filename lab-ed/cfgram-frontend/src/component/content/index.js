@@ -7,7 +7,7 @@ class Content extends React.Component {
   render() {
     return (
       <div>
-        <h1>Welcome to the photo app</h1>
+        <h1>Add a photo</h1>
         <PictureForm onComplete={this.props.createPicture}/>
         {/* <p>{this.props.token}</p> */}
       </div>
@@ -16,7 +16,7 @@ class Content extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  createPicture : picture => dispatch(pictureActions.createAction(picture))
+  createPicture : picture => dispatch(pictureActions.createActionRequest(picture))
 })
 
 export default connect(null, mapDispatchToProps)(Content)

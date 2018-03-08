@@ -1,4 +1,5 @@
 import React from 'react'
+import '../style/layout/_picture-form.scss'
 
 const fileToDataURL = file => {
   return new Promise((resolve, reject) => {
@@ -34,7 +35,7 @@ class PictureForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleValidate({type,value,files}) {
+  handleValidate({type, value, files}) {
     let validImageTypes = ['image/png', 'image/jpeg', 'image/jpg']
 
     switch(type) {
@@ -45,7 +46,7 @@ class PictureForm extends React.Component {
         return null
 
       case 'text':
-        if (value.length < 10) return 'You must have at least 10 characters'
+        if (value.length < 4) return 'You must have at least 4 characters'
         return null
       
       default:
@@ -85,6 +86,7 @@ class PictureForm extends React.Component {
 
   render() {
     return (
+      <div className="wrapper">
       <form
         onSubmit={this.handleSubmit}
         className='photo-form'>
@@ -111,10 +113,9 @@ class PictureForm extends React.Component {
         />
 
         <button
-          type='submit'>
-          upload photo
-        </button>
+          type='submit'>upload photo</button>
       </form>
+      </div>
     )
   }
 }

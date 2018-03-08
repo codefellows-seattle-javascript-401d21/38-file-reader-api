@@ -10,6 +10,8 @@ export default(state = [], {type,payload}) => {
   switch(type) {
     
   case 'CLIENT_PICTURE_CREATE':
+    console.log('picture payload',payload);
+    
     validatepicture(payload)
     return [payload,...state]
   
