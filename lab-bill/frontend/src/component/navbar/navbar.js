@@ -16,7 +16,8 @@ export default class Navbar extends React.Component {
       getProfileRequest()
         .then(res => this.setState({
             profile: res
-        }));
+        }))
+        .catch();
     }
 
   render() {
