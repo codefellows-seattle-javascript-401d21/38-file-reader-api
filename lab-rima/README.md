@@ -4,7 +4,9 @@ There are three routes:
 
 > /welcome/signin to sign in
 
-> /content -> once you are authenticated, you will be redirected to this page or you can access manually
+> /setting to create a profile, once you are authenticated, you will be redirected to this page 
+
+> /content -> you can access manually
 
 #### Usage
 1. Clone this repo in your desired location.
@@ -24,7 +26,10 @@ PORT=3000
 DEBUG=true
 CORS_ORIGINS=http://localhost:8080
 SECRET='any string you like'
-MONGO_URI=mongodb://localhost/testdb
+MONGO_URI=mongodb://localhost/<your desired db name>
+AWS_BUCKET='yours'
+AWS_ACCESS_KEY_ID='yours'
+AWS_SECRET_ACCESS_KEY='yours'
 ```
 In .env for frontend
 ```
