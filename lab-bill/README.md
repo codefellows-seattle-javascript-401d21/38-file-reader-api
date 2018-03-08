@@ -26,3 +26,4 @@ Start a backend server using npm run:watch, start a webpack build using npm run 
 To reach the signin route visit localhost:8080/welcome/signin
 To reach the signup route visit localhost:8080/welcome/signup
 To reach the content page visit localhost:8080/content
+To reach the settings page visit localhost:8080/settings
