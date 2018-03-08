@@ -6,6 +6,11 @@ export const createAction = picture => ({
   payload: picture,
 });
 
+export const profileSet = profile => ({
+  type: 'PROFILE_SET',
+  payload: profile,
+});
+
 export const createActionRequest = (picture) => (dispatch) => {
   let token = localStorage.getItem('token');
 
