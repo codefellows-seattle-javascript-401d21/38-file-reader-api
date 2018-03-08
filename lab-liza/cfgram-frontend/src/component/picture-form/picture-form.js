@@ -3,7 +3,7 @@ import React from 'react';
 const fileToDataURL = file => {
   return new Promise((resolve,reject) => {
     if(!file)
-        return reject(new Error('File is required'));
+      return reject(new Error('File is required'));
 
     //-------------------------------------------------------------
     // vinicio - sync
@@ -51,22 +51,22 @@ class PictureForm extends React.Component{
     let validImageTypes = ['image/png','image/jpeg','image/jpg'];
 
     switch(type){
-      case 'file':
-        if(files.length !== 1)
-          return 'You must only select one file';
+    case 'file':
+      if(files.length !== 1)
+        return 'You must only select one file';
 
-        let imageType = files[0].type;
+      let imageType = files[0].type;
 
-        if(!validImageTypes.includes(imageType))
-          return 'The image must be a png or a jpg';
+      if(!validImageTypes.includes(imageType))
+        return 'The image must be a png or a jpg';
 
-        return null;
-      case 'text':
-        if(value.length < 10)
-          return 'You must have at least 10 characters';
-        return null;
-      default:
-        return null;
+      return null;
+    case 'text':
+      if(value.length < 10)
+        return 'You must have at least 10 characters';
+      return null;
+    default:
+      return null;
     }
   }
 
