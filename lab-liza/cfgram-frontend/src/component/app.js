@@ -1,7 +1,8 @@
 import './main.scss';
 import React from 'react';
-import Content from './content';
 import Landing from './landing';
+import Content from './content';
+import Navbar from './navbar/index';
 import {Provider} from 'react-redux';
 import createStore from '../lib/app-create-store';
 import {BrowserRouter, Route, Redirect} from 'react-router-dom';
@@ -23,6 +24,7 @@ export default class App extends React.Component {
         <Provider store={store}>
           <BrowserRouter>
             <React.Fragment>
+              <Navbar token={token}/>
               <Route exact path="/welcome/:auth" component={Landing}/>
               <Route exact path="/content" component={() =>
                 token

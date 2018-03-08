@@ -1,13 +1,14 @@
 body {
-  background-color: lightseagreen;
+  background-color: lightslategrey;
   color: beige;
   text-transform: uppercase;
+  font-family: sans-serif;
+  margin: 0 auto;
 };
 
 input {
   background-color: lightgrey;
   border-radius: 4px;
-  width: 10%;
   padding: 1%;
   margin: 3%;
   color: black;
@@ -15,6 +16,7 @@ input {
   font-family: sans-serif;
   word-spacing: 2px;
   font-weight: bold;
+  display: inline;
 }
 
 input:focus {
@@ -25,7 +27,44 @@ input:focus {
 
 button{
   padding: 1%;
-  font-weight: bold;
-  border-radius: 8%;
-  background-color: darkorange;
+  background-color: darkcyan;
+  color: beige;
+  text-shadow: 1px 1px black;
+  display: inline;
+}
+
+nav {
+  overflow: hidden;
+  background-color: lightseagreen;
+  position: relative;
+  background-position: center;
+  top: 0%;
+  min-width: 100%;
+  margin: 0;
+  opacity: .3;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+
+  li {
+    list-style-type: none;
+    display: inline;
+    padding-left: 30px;
+  }
+
+  a {
+    display: inline;
+    padding: 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    font-family: serif;
+    letter-spacing: 5px;
+    font-weight: bold;
+  }
+
+  a:hover {
+    color: lightgray;
+    text-shadow: 1px 1px black;
+  }
 }
