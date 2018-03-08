@@ -10,6 +10,8 @@ mongo
 RUN MONGO DATABASE
 npm run start-db
 
+npm run stop-db
+
 RUN SERVER
 npm run start:watch
 
