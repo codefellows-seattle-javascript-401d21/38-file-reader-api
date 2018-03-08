@@ -5,6 +5,11 @@ export const createProfile = profile => ({
   payload: profile,
 });
 
+export const getProfile = profile => ({
+  type: 'PROFILE_GET',
+  payload: profile,
+});
+
 export const createProfileRequest = (profile) => (dispatch) => {
   let token = localStorage.getItem('token');
 
@@ -16,3 +21,4 @@ export const createProfileRequest = (profile) => (dispatch) => {
       return dispatch(createProfile(response.body));
     });
 };
+
