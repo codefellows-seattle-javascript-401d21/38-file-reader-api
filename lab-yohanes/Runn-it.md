@@ -18,3 +18,6 @@ PULL UP DATABASE
 user cfgram
 
 db.user.find().pretty()
+
+#LAST LEFT OFF
+Part 3 26 minutes right before we upload images to our database using Amazon SW3 buckets. To Be Continued... 
