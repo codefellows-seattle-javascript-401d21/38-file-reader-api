@@ -1,0 +1,16 @@
+{
+  "name": "38-file-reader-api",
+  "version": "1.0.0",
+  "description": "Authorization Sign Up/Sign In",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "Front-End",
+    "==><==",
+    "Back-End"
+  ],
+  "author": "Yohan the Dev Don",
+  "license": "ISC"
+}
