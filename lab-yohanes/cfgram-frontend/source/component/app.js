@@ -23,8 +23,9 @@ export default class App extends React.Component{
           <BrowserRouter>
             <React.Fragment>
               <Navbar token={token} store={store}/>
-              <Route exact path="/Welcome/:auth" component={props =>
-                token ? <Redirect to="/dashboard"/> : <Landing {...props}/>}/>
+              <Route exact path="/welcome/:auth" component={Landing} />
+              {/* <Route exact path="/Welcome/:auth" component={props =>
+                token ? <Redirect to="/dashboard"/> : <Landing {...props}/>}/> */}
               <Route exact path="/dashboard" component={() =>
                 token ?
                   <Dashboard token={token} /> :
