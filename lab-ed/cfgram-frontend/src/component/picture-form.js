@@ -21,7 +21,7 @@ class PictureForm extends React.Component {
 
       photo: '',
       photoDirty: false,
-      photoError: 'Picture is required.',
+      photoError: 'Image is required.',
 
       description: '',
       descriptionDirty: false,
@@ -94,7 +94,7 @@ class PictureForm extends React.Component {
         <img style={{width:'200px'}} src={this.state.preview} />
 
         <p>{this.state.photoError}</p>
-        <label>Photo</label>
+        <label>Image</label>
 
         <input
           type='file'
@@ -113,7 +113,7 @@ class PictureForm extends React.Component {
         />
 
         <button
-          type='submit'>upload photo</button>
+          type='submit'>upload image</button>
       </form>
       </div>
     )

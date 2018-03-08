@@ -9,6 +9,7 @@ export default class Navbar extends React.Component {
       <header>
         {/* <Avatar/> */}
         <nav>
+          <h1 className="main-header">AWS uploads built with React and Redux</h1>
           <ul>
             {renderIf(!this.props.token,
               <React.Fragment>

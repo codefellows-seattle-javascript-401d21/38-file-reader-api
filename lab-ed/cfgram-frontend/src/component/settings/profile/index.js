@@ -20,10 +20,11 @@ class Profile extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.onComplete(this.state)
-    this.setState({
-      bio: '',
-    })
+    console.log("PROPS", this.props)
+    // this.props.onComplete(this.state)
+    // this.setState({
+    //   bio: '',
+    // })
   }
 
   render() {
@@ -31,7 +32,8 @@ class Profile extends React.Component {
 
       <div>
       <div>
-        <h1>Add an avatar</h1>
+        <h1>Profile</h1>
+        <h2>Add or update an avatar image and bio</h2>
         <PictureForm onComplete={this.props.createPicture}/>
       </div>
 
@@ -55,8 +57,8 @@ class Profile extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  createPicture : picture => dispatch(pictureActions.createActionRequest(picture))
+  createPicture : picture => dispatch(pictureActions.createActionRequest(picture)),
+  createProfile : profile => dispatch(profileActions.createActionRequest(profile))
 })
 
 export default connect(null, mapDispatchToProps)(Profile)
-
