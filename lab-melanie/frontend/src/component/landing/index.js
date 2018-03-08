@@ -25,7 +25,7 @@ class Landing extends React.Component {
         <h1>Welcome! Please {this.props.match.params.auth === 'signin' ? 'Signin' : 'Signup'}</h1>
         <AuthForm
           // redirect={this.redirect}
-          history={this.props.history}
+          // history={this.props.history}
           auth={params.auth}
           onComplete={onComplete}/>
       </div>

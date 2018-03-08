@@ -1,6 +1,7 @@
 import React from 'react';
 import Dashboard from './dashboard';
 import Landing from './landing';
+import Navbar from './navbar';
 import {Provider} from 'react-redux';
 import createStore from '../lib/app-create-store';
 import {BrowserRouter, Route, Redirect} from 'react-router-dom';
@@ -26,6 +27,7 @@ export default class App extends React.Component {
         <Provider store={store}>
           <BrowserRouter>
             <React.Fragment>
+              <Navbar token={token}/>
               <Route exact path="/welcome/:auth" component={Landing}/>
               <Route exact path="/dashboard" component={() =>
                 token

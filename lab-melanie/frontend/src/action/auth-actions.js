@@ -1,5 +1,6 @@
 import superagent from 'superagent';
 
+// -- Sync Actions -- //
 export const tokenSet = token => ({
   type: 'TOKEN_SET',
   payload: token,
@@ -9,6 +10,7 @@ export const tokenDelete = () => ({
   type: 'TOKEN_DELETE',
 });
 
+// -- Async Actions -- //
 export const signupRequest = user => dispatch => {
   return superagent.post(`${__API_URL__}/signup`)
     .send(user)

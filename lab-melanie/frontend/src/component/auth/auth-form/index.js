@@ -1,7 +1,6 @@
 import React from 'react';
 import {renderIf} from '../../../lib/utils';
 import {Redirect} from 'react-router-dom';
-import Dashboard from '../../dashboard/index';
 
 export default class AuthForm extends React.Component {
   constructor(props) {
@@ -45,8 +44,7 @@ export default class AuthForm extends React.Component {
 
   render() {
     return (
-      <div>
-        {console.log('this.state.token', this.state.token)}
+      <div className="auth-form">
         {this.state.token ? <Redirect to='/dashboard'/> : undefined}
         <form
           className="auth-form"
