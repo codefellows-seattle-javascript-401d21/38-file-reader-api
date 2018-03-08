@@ -16,7 +16,7 @@ import * as pictureActions from '../../action/picture-actions'; //
 }
 
 const mapDispatchToProps = dispatch => ({
-  createPicture : picture => dispatch(pictureActions.CreateActionRequest(picture)),
+  createPicture : picture => dispatch(pictureActions.createActionRequest(picture)),
 });
 
 export default connect(null, mapDispatchToProps)(Dashboard)

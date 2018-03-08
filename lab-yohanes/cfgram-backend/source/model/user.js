@@ -31,7 +31,7 @@ userSchema.methods.tokenCreate = function () {
   this.randomHash = randomBytes(32).toString('base64')
   return this.save()
     .then(user => {
-      return jwt.sign({ randomHash: this.randomHash }, process.env.APP_SECRET)
+      return jwt.sign({ randomHash: this.randomHash }, process.env.SECRET)
     })
     .then(token => {
       return token
