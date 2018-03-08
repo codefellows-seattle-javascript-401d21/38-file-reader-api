@@ -7,13 +7,13 @@ class Dashboard extends React.Component {
   render() { 
     return ( 
       <div>
-        <h1>Hello, I am authorized to see this!</h1>
+        <h1>Upload a photo for your Profile</h1>
         <PhotoForm onComplete={this.props.createPic}/>
       </div>
     );
   }
 }
-let mapDispacthToProps = dispatch => ({
+let mapDispatchToProps = dispatch => ({
   createPic: photo => dispatch(photoAction.createActionRequest(photo)),
 });
-export default connect (null, mapDispacthToProps)(Dashboard);
+export default connect (null, mapDispatchToProps)(Dashboard);

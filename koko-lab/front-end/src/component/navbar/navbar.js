@@ -2,18 +2,26 @@ import React from 'react';
 import { renderIf } from '../../library/utilities';
 import { tokenDelete } from '../../action/action-auth';
 import { connect } from 'react-redux';
+import Avatar from 'react-avatar';
+
 
 class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      avatar: false,
+    };
+  }
   render() {
     return (
       <header>
-        {/* <Avatar/> */}
+        {/* <Avatar src={} name="avatar-photo"/> */}
         <nav>
           <ul>
             {renderIf(!this.props.token,
               <React.Fragment>
-                <li><a href="/welcome/signup">Signup</a></li>
-                <li><a href="/welcome/signin">Signin</a></li>
+                <li><a href="/welcome/signup">Sign Up</a></li>
+                <li><a href="/welcome/signin">Sign In</a></li>
               </React.Fragment>
             )}
             {renderIf(this.props.token,
@@ -34,4 +42,4 @@ let mapDispatchToProps = dispatch => ({
   tokenDelete: () => dispatch(tokenDelete),
 });
 
-export default connect (mapDispatchToProps, mapStateToProps)(Navbar)
+export default connect (mapStateToProps, mapDispatchToProps)(Navbar);

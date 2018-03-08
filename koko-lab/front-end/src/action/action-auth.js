@@ -7,7 +7,6 @@ export const tokenSet = token => ({
 
 export const tokenDelete = () => {
   delete localStorage.token;
-  localStorage.clear();
   return {
     type: 'TOKEN_DELETE',
   };
@@ -28,5 +27,12 @@ export const signupRequest = user => dispatch => {
 export const signinRequest = user => dispatch => {
   return superagent.get(`${__API_URL__}/login`)
     .auth(user.username, user.password)
-    .then(response => dispatch(tokenSet(response.text)));
+    .then(response => {
+      dispatch(tokenSet(response.text));
+      try {
+        localStorage.setItem('token', response.text);
+      } catch(event) {
+        console.log(event);
+      }
+    });
 }; 
