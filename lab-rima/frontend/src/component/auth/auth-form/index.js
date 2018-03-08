@@ -39,7 +39,7 @@ export default class AuthForm extends React.Component{
 
   render(){
     if(localStorage.token){
-      window.location = '/content';
+      window.location = '/setting';
     }
     return (
       <form

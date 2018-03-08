@@ -1,6 +1,7 @@
 import React from 'react';
 import Content from './content';
 import Landing from './landing';
+import Setting from './setting';
 import {Provider} from 'react-redux';
 import appStoreCreate from '../lib/app-create-store';
 import {BrowserRouter, Route, Redirect} from 'react-router-dom';
@@ -24,6 +25,7 @@ export default class App extends React.Component{
           <BrowserRouter>
             <React.Fragment>
               <Route exact path="/welcome/:auth" component={Landing} />
+              <Route exact path="/setting" component={Setting} />
               <Route exact path="/content" component={() =>
                 token
                   ? <Content token={token} />
