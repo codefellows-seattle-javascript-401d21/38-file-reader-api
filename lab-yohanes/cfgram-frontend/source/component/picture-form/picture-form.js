@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const fileToDataURL = file => {
@@ -7,7 +6,8 @@ const fileToDataURL = file => {
       return reject(new Error('File Required'));
 
     let reader = new FileReader(); //read docs for this portion. No secret to this magic
-    reader.addEventListener('load', () => resolve(reader.resolve));
+    reader.addEventListener('load', () => resolve(reader.result));
+    // reader.addEventListener('load', () => resolve(reader.resolve));
     reader.addEventListener('error', reject);
 
     return reader.readAsDataURL(file);
@@ -35,7 +35,7 @@ class PictureForm extends React.Component {
     let memberFunctions = Object.getOwnPropertyNames(PictureForm.prototype);
     for (let functionName of memberFunctions) {
       if (functionName.startsWith('handle')) {
-        this[FunctionName] = this[functionName].bind(this);
+        this[functionName] = this[functionName].bind(this);
       }
     }
   }
@@ -46,7 +46,7 @@ class PictureForm extends React.Component {
     switch (type) {
       case 'file':
         if (files.length !== 1) // if the user try to upload more than one picture at a time
-          return 'You must only select one file'
+          return 'Please Upload One File At A Time'
 
         let imageType = files[0].type; //makes sure it is an image type within our stored array (jpg, png, etc.)
 
@@ -64,7 +64,7 @@ class PictureForm extends React.Component {
   }
 
   handleChange(event) {
-    let { type, value, files } = event.target;
+    let {type, value, files} = event.target;
 
     if (type === 'file') {
       let error = this.handleValidate(event.target); //validates all event listeners before post
@@ -101,6 +101,15 @@ class PictureForm extends React.Component {
 
         <img style={{ width: '200px' }} src={this.state.preview} />
 
+        <p>{this.state.photoError}</p>
+        <label>Photo</label>
+
+        <input
+          type="file"
+          name="photo"
+          onChange={this.handleChange}
+        />
+
         <p>{this.state.descriptionError}</p>
         <label>Description</label>
 
@@ -114,7 +123,7 @@ class PictureForm extends React.Component {
         <button
           type="submit">
           Upload Photo
-            </button>
+        </button>
       </form>
     )
   }
