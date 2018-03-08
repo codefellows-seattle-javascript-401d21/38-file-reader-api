@@ -20,10 +20,8 @@ App
     Navbar
         Avatar
     Dashboard
-        GalleryForm
-        [GalleryItem]
-            PhotoForm
-            [PhotoItem]
+        PhotoForm
+        [PhotoItem]
     Settings
         Profile
 ```
