@@ -23,8 +23,6 @@ export default class ProfileForm extends React.Component {
     this.state ={
       avatar: '',
       bio: '',
-      username: '',
-      email: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -33,7 +31,6 @@ export default class ProfileForm extends React.Component {
 
   handleChange(e) {
     let { value, files, type } = e.target;
-    console.log(e.target.type);
 
 
     if (type === 'file') {
@@ -52,8 +49,6 @@ export default class ProfileForm extends React.Component {
       .then(() => this.setState({
         avatar: '',
         bio: '',
-        username: '',
-        email: '',
       }))
       .catch(error => this.setState({error}));
   }
@@ -79,24 +74,6 @@ export default class ProfileForm extends React.Component {
             name="bio"
             placeholder="bio"
             value={this.state.bio}
-            onChange={this.handleChange}/>
-        </fieldset>
-
-        <fieldset>
-          <input
-            type="text"
-            name="username"
-            placeholder="username"
-            value={this.state.username}
-            onChange={this.handleChange}/>
-        </fieldset>
-
-        <fieldset>
-          <input
-            type="text"
-            name="email"
-            placeholder="email"
-            value={this.state.email}
             onChange={this.handleChange}/>
         </fieldset>
 
