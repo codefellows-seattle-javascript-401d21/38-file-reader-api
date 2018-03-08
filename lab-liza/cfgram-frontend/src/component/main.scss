@@ -4,7 +4,11 @@ body {
   text-transform: uppercase;
   font-family: sans-serif;
   margin: 0 auto;
-};
+}
+
+h1, p, label, input, img {
+  margin-left: 5%;
+}
 
 input {
   background-color: lightgrey;
@@ -16,7 +20,6 @@ input {
   font-family: sans-serif;
   word-spacing: 2px;
   font-weight: bold;
-  display: inline;
 }
 
 input:focus {
@@ -30,7 +33,9 @@ button{
   background-color: darkcyan;
   color: beige;
   text-shadow: 1px 1px black;
-  display: inline;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 nav {
@@ -57,14 +62,14 @@ nav {
     padding: 8px;
     text-decoration: none;
     font-size: 20px;
-    color: black;
+    color: rgb(53, 45, 45);
     font-family: serif;
     letter-spacing: 5px;
     font-weight: bold;
   }
 
   a:hover {
-    color: lightgray;
+    color: darkslategray;
     text-shadow: 1px 1px black;
   }
 }
