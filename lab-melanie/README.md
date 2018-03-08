@@ -12,14 +12,14 @@ Then the user needs to navigate to:
 localhost:8080/welcome/signin
 ```
 
-This will then redirect the user to their dashboard. At this point, a second user may sign up and will be automatically redirected to the dashboard, but not on the initial user sign up.
-
 Once a user has been signed in or signed up, they may navigate to the dashboard at any time. If a user attempts to access the dashboard for the first time, the dashboard route will redirect the user to the signup route.
 
 Dashboard route:
 ```
 localhost:8080/dashboard
 ```
+
+A navbar exists to direct a user to their dashboard and settings once they have signed in. The settings includes a form to create a profile and upload an avitar picture.
 
 ---
 
@@ -43,4 +43,8 @@ DEBUG=true
 CORS_ORIGINS=http://localhost:8080
 SECRET=PUMPKIN
 MONGO_URI=mongodb://localhost/picgram
+
+AWS_ACCESS_KEY_ID='<a aws access key id>'
+AWS_SECRET_ACCESS_KEY='<a aws secret access key>'
+AWS_BUCKET='<a aws bucket>'
 ```

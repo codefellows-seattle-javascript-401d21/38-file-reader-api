@@ -2,6 +2,7 @@ import React from 'react';
 import Dashboard from './dashboard';
 import Landing from './landing';
 import Navbar from './navbar';
+import Settings from './settings';
 import {Provider} from 'react-redux';
 import createStore from '../lib/app-create-store';
 import {BrowserRouter, Route, Redirect} from 'react-router-dom';
@@ -34,6 +35,7 @@ export default class App extends React.Component {
                   ? <Dashboard token={token}/>
                   : <Redirect to="/welcome/signup"/>}
               />
+              <Route exact path="/settings" component={Settings}/>
             </React.Fragment>
           </BrowserRouter>
         </Provider>
