@@ -5,9 +5,10 @@ export const tokenSet = token => ({
   payload: token,
 })
 
-export const tokenDelete = () => ({
-  type: 'TOKEN_DELETE'
-})
+export const tokenDelete = () => {
+  delete localStorage.token
+  return {type: 'TOKEN_DELETE'}
+}
 
 export const signupRequest = user => dispatch => {
   return superagent.post(`${__API_URL__}/signup`) //POST NEW ACCOUNT INTO OUR DATABASE
@@ -15,7 +16,7 @@ export const signupRequest = user => dispatch => {
   .then(response => {
     dispatch(tokenSet(response.text)) //once the user has created an account, a token is then rendered to the users login information
       try {
-        localStorage.setItem('token', response.text) //i think this is where the text is recieved from local storeage, stringified
+        localStorage.setItem('token', response.text) //i think this is where the text is received from local storeage, stringified
       } catch(e) {
         console.log(e)
         throw e //I'm pretty sure e is supposed to be Error

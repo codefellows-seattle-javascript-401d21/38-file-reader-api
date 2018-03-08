@@ -3,7 +3,20 @@ export default (state = null, action) => {
 
   switch (type) {
     case 'TOKEN_SET': return payload
-    case 'TOKEN_DELETE': return null
+    case 'TOKEN_DELETE':
+      delete localStorage.token
+    return null
     default: return state
   }
+}
+
+//REDUCER FROM DEMO
+const validatePicture = picture => {
+  if(!picture)
+    throw new Error ('No Content');
+
+    let {_id, url, description, owner} = picture;
+
+    if(!_id || !url || !discription || !owner)
+      throw new Error('No Content');
 }

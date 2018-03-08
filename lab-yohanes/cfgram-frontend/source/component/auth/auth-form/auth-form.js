@@ -13,7 +13,6 @@ export default class AuthForm extends React.Component {
       emailError: null,
       passwordError: null,
       error: null,
-      // fireRedirect: false,
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -34,20 +33,18 @@ export default class AuthForm extends React.Component {
     e.preventDefault()
     let { username, email, password } = this.state
     this.props.onComplete({ username, email, password })
-      // .then(() => this.setState({fireRedirect: !this.state.fireRedirect, username: '', email: '', password: '' }))
       .then(() => this.setState({username: '', email: '', password: '' }))
       .then(() => this.props.redirect('/dashboard')) //direct interface of the history of the API
       .catch(error => this.setState({ error }))
   }
 
   render() {
-    const {fireRedirect} = this.state;
     return (
       <div>
         <form
           className="auth-form"
           onSubmit={this.handleSubmit}
-          
+
           noValidate>
 
           <input
@@ -77,9 +74,6 @@ export default class AuthForm extends React.Component {
 
           <button type="submit">{this.props.auth}</button>
         </form>
-          {fireRedirect && (
-            <Redirect to='/dashboard'/>
-          )}
       </div>
     )
   }

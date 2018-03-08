@@ -14,3 +14,7 @@ let reporter = store => next => action => {
 }
 
 export default reporter
+
+//DEMO VERSION
+
+const 

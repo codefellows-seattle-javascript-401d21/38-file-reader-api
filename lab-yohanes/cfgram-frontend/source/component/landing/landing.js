@@ -11,7 +11,8 @@ class Landing extends React.Component {
   }
 
   redirect(path) {
-    this.props.history.replace(path)
+    // this.props.history.replace(path)
+    this.props.history.push(path)
   }
   render() {
     console.log('__LANDING_PROPS__', this.props)

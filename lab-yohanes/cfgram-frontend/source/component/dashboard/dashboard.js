@@ -1,6 +1,10 @@
 import React from 'react';
+import {connect} from 'react-redux'; //create pictures
+import PictureFrom from'../picture-form/picture-form';
+import * as pictureActions from '../../action/picture-actions'; //
 
-export default class Dashboard extends React.Component {
+
+ class Dashboard extends React.Component {
   render() {
     return (
       <div>
@@ -10,3 +14,9 @@ export default class Dashboard extends React.Component {
     )
   }
 }
+
+const mapDispatchToProps = dispatch => ({
+  createPicture : picture => dispatch(pictureActions.CreateActionRequest(picture)),
+});
+
+export default connect(null, mapDispatchToProps)(Dashboard)
