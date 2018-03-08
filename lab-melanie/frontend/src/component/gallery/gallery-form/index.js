@@ -1,3 +1,4 @@
+import './_gallery-form.scss';
 import React from 'react';
 
 class GalleryForm extends React.Component {

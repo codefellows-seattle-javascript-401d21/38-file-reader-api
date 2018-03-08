@@ -1,3 +1,4 @@
+import './_gallery-item.scss';
 import React from 'react';
 import {connect} from 'react-redux';
 import {galleryUpdate, galleryDelete} from '../../../action/gallery-actions';
@@ -41,7 +42,7 @@ class GalleryItem extends React.Component {
 
   render() {
     return (
-      <div className="rider-item" key={this.props.gallery.name}>
+      <div className="gallery-item" key={this.props.gallery.name}>
         <h2 onDoubleClick={this.handleEditing}>{this.props.gallery.name}</h2>
         <button type="button" onClick={this.handleDelete}>{this.props.buttonText}</button>
         {renderIf(this.state.editing, <GalleryForm
