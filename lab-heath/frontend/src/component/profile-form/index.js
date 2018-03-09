@@ -3,8 +3,21 @@ import './_profile-form.scss';
 import React from 'react';
 import {connect} from 'react-redux';
 import PictureForm from '../picture-form/index';
-import * as pictureActions from '../../action/picture-actions';
+// import * as pictureActions from '../../action/picture-actions';
 
+
+const fileToDataURL = file => {
+  return new Promise((resolve,reject) => {
+    if(!file)
+      return reject(new Error('File is required'));
+
+    let reader = new FileReader();
+    reader.addEventListener('load', () => resolve(reader.result));
+    reader.addEventListener('error',reject);
+
+    return reader.readAsDataURL(file);
+  });
+};
 
 
 class ProfileForm extends React.Component {
@@ -22,7 +35,14 @@ class ProfileForm extends React.Component {
   }
 
   handleChange(e) {
-    this.setState({[e.target.name]: e.target.value});
+    if(e.target.type !== 'file') {
+      return this.setState({[e.target.name]: e.target.value});
+    }
+  
+    fileToDataURL(e.target.files[0])
+      .then(avatar_preview => this.setState({avatar_preview}))
+      .catch(console.error);
+    this.setState({file: e.target.files[0]});
   }
 
   handleSubmit(event) {
@@ -38,8 +58,18 @@ class ProfileForm extends React.Component {
   render() {
     return (
       <form className='profile-form' onSubmit={this.handleSubmit}>
-      
-        <PictureForm onComplete={this.props.createPicture} />
+
+        <img style={{width:'100px'}} src={this.state.preview} />
+
+        <p>{this.state.photoError}</p>
+        <label>Photo</label>
+
+        <input
+          type='file' 
+          name='photo'
+          onChange={this.handleChange}
+        />
+
         <input
           name='bio'
           placeholder={this.props.profile.bio}

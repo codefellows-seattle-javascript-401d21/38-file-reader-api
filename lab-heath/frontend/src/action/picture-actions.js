@@ -6,6 +6,11 @@ export const createAction = picture => ({
   payload: picture,
 });
 
+export const getAction = picture => ({
+  type: 'CLIENT_PICTURE_GETME',
+  payload: picture,
+});
+
 export const createActionRequest = picture => dispatch => {
   let token = localStorage.getItem('token');
 
@@ -16,4 +21,12 @@ export const createActionRequest = picture => dispatch => {
     .then(res => {
       return dispatch(createAction(res.body));
     });
+};
+
+export const getActionRequest = picture => dispatch => {
+  let token = localStorage.getItem('token');
+
+  return superagent.get(`${__API_URL__}${routes.PICTURES_ROUTE}/me`)
+    .set('Authorization', `Bearer ${token}`)
+    .then(res => dispatch(getAction(res.body)));
 };

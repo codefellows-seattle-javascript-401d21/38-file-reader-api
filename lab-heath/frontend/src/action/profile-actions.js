@@ -36,9 +36,11 @@ export const getMeProfileRequest = profile => (dispatch, getState) => {
 
 export const updateProfileRequest = profile => (dispatch, getState) => {
   let token = localStorage.getItem('token');
+  let {file, bio, _id} = profile;
   return superagent.put(`${__API_URL__}${routes.PROFILES_ROUTE}/${profile._id}`)
     .set('Authorization', `Bearer ${token}`)
-    .send(profile)
+    .field('bio', bio)
+    .attach('avatar', file)
     .then(res => dispatch(updateProfile(res.body)));
 
 };

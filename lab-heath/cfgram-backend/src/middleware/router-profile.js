@@ -6,7 +6,6 @@ import {bearerAuth} from './parser-auth.js';
 
 export default new Router()
   .post('/profiles', bearerAuth, parserBody, (req, res, next) => {
-    console.log('this is in the post', req);
     Profile.create(req)
       .then(res.json)
       .catch(next);
