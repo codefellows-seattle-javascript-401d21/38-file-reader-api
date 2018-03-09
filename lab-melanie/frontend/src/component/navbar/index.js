@@ -9,7 +9,6 @@ export default class Navbar extends React.Component {
   render() {
     return (
       <header>
-        <p>Avatar will appear here</p>
         <Avatar/>
         <nav>
           <ul>
