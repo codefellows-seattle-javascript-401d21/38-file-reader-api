@@ -33,9 +33,8 @@ class Landing extends React.Component {
   }
 }
 
-let mapStateToProps = state => {
-
-};
+let mapStateToProps = state => ({
+});
 
 let mapDispatchToProps = dispatch => ({
   signup: user => dispatch(signupRequest(user)),

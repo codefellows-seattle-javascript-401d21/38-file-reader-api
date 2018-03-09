@@ -17,8 +17,8 @@ export default (state = [],{type, payload}) => {
     return payload;
   case 'PROFILE_UPDATE':
     return payload;
-  case 'TOKEN_DELETE':
-    return [];
+  // case 'TOKEN_DELETE':
+  //   return [];
   default:
     return state;
   }
