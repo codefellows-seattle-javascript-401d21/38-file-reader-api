@@ -1,7 +1,35 @@
 .profile-item {
-  outline: 1px solid red;
+  margin: 0 50px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: cornsilk;
+  border: 2px solid;
 }
 
 .update {
-  background-color: grey;
+  position: relative;
+  border: 1px solid;
+  border-radius: 20px;
+  margin: 0 50px;
+  background: lightslategray;
+  padding: 20px;
+   button {
+     outline: none;
+    background-color: white;
+   }
+}
+
+button {
+  outline: none;
+}
+
+.updatingform {
+  width: 200px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.avatar {
+  height: 150px;
 }

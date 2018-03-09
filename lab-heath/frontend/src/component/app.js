@@ -1,9 +1,10 @@
 import React from 'react';
 import Content from './content';
 import Landing from './landing';
+import Settings from './settings';
 import {Provider} from 'react-redux';
 // import Navbar from '../component/navbar/index';
-import Settings from '../component/settings/index';
+// import Settings from '../component/settings/index';
 import createStore from '../lib/app-create-store';
 import {BrowserRouter, Route, Redirect} from 'react-router-dom';
 
@@ -25,9 +26,13 @@ export default class App extends React.Component {
             <React.Fragment>
               {/* <Navbar token={token} /> */}
               <Route exact path="/welcome/:auth" component={Landing}/>
-              <Route exact path="/settings" component={Settings}/>
-              <Route exact path="/content" component={() =>
-                token
+              <Route exact path="/settings" component={() => 
+                store.getState().token
+                  ? <Settings token={token}/>
+                  : <Redirect to="/welcome/signup"/>}
+              />
+              <Route exact path="/content" component={() => 
+                store.getState().token
                   ? <Content token={token}/>
                   : <Redirect to="/welcome/signup"/>}
               />

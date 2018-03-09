@@ -12,8 +12,10 @@ export default (state = [],{type,payload}) => {
   
   switch (type) {
   case 'CLIENT_PICTURE_CREATE':
-    validatepicture(payload);
-    return [payload,...state];
+    // validatepicture(payload);
+    return [payload, ...state];
+  case 'CLIENT_PICTURE_GETME':
+    return [...payload.data, ...state];
   case 'TOKEN_DELETE':
     return [];
   default:

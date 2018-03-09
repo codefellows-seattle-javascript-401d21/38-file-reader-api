@@ -1,3 +1,5 @@
+import './_landing.scss';
+
 import React from 'react';
 import {connect} from 'react-redux';
 import Content from '../content/index';
@@ -23,13 +25,17 @@ class Landing extends React.Component {
       ? this.props.signin
       : this.props.signup;
     
+  
     return (
-      <div className="landing-container">
-        <AuthForm
-          auth={params.auth}
-          redirect={this.redirect}
-          history={this.props.history}
-          onComplete={onComplete}/>
+      <div>
+        <h1 className="logo">Welcome To InstaPie!</h1>
+        <div className="landing-container">
+          <AuthForm
+            auth={params.auth}
+            redirect={this.redirect}
+            history={this.props.history}
+            onComplete={onComplete}/>
+        </div>
       </div>
     );
   }
