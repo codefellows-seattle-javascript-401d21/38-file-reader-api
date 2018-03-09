@@ -25,6 +25,10 @@ class Content extends React.Component {
         <Nav />
         <h1>WELCOME TO INSTAPIE 3.14!</h1>
         <p className="bar"> ---------------------------------------------</p>
+        <button className="logout" onClick={() => {
+          localStorage.clear();
+          window.location.reload();
+        }}> Signout</button>
         <div className="profile-Upload">
           <GalleryProfile profile={this.props.profile}/>
           <PictureForm onComplete={this.props.createPicture}/>
