@@ -1,10 +1,10 @@
 const validatePhoto = photo => {
   if(!photo)
-    throw new Error('Invalid Photo');
+    throw new Error('Photo missing');
 
   let {_id, url, description, owner} = photo;
 
-  if(!_id || !url || !description || !owner)
+  if(!_id || !description)
     throw new Error('Invalid Photo');
 };
 

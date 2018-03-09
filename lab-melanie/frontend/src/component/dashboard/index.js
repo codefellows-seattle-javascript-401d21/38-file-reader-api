@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {fetchPhotoRequest, photoCreate} from '../../action/photo-actions';
+import {fetchPhotoRequest, photoCreate, createPhotoRequest} from '../../action/photo-actions';
 import {galleryCreate} from '../../action/gallery-actions';
 import GalleryForm from '../gallery/gallery-form';
 import GalleryItem from '../gallery/gallery-item';
@@ -15,7 +15,7 @@ class Dashboard extends React.Component {
     return (
       <div className="dashboard-container">
         <h1>Welcome to Your Dashboard!</h1>
-        <GalleryForm
+        {/* <GalleryForm
           buttonText="Create"
           onComplete={this.props.createGallery}/>
 
@@ -28,7 +28,7 @@ class Dashboard extends React.Component {
             </div>)
           :
           undefined
-        }
+        } */}
 
         <PhotoForm onComplete={this.props.createPhoto}/>
 
@@ -53,7 +53,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch, getState) => ({
   createGallery: gallery => dispatch(galleryCreate(gallery)),
   fetchPhotos: () => dispatch(fetchPhotoRequest()),
-  createPhoto: photo => dispatch(photoCreate(photo)),
+  createPhoto: photo => dispatch(createPhotoRequest(photo)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

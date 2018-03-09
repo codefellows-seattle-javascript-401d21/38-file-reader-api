@@ -1,5 +1,6 @@
 import './_photo-form.scss';
 import React from 'react';
+import {connect} from 'react-redux';
 
 const fileToDataURL = file => {
   return new Promise((resolve, reject) => {
@@ -94,7 +95,7 @@ class PhotoForm extends React.Component {
     }
   }
 
-  handleSubmit(event, error) {
+  handleSubmit(event) {
     event.preventDefault();
     // if(error) return new Error(error);
     this.props.onComplete(this.state);
