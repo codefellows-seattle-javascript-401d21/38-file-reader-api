@@ -39,11 +39,20 @@ form {
         user-select: none;
     }
 
+    label {
+        font-weight: 900;
+    }
+
     input {
         @extend %formelements;
 
         &::placeholder {
             color: $tertiary-color;
+        }
+
+        &[type=file] {
+            width: 16em;
+            font-size: 1em;
         }
 
         &[type=radio] {

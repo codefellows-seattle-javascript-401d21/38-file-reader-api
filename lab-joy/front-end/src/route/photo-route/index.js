@@ -1,1 +1,1 @@
-export const PHOTOS_ROUTE = '/cf-photos';
+export const PHOTOS_ROUTE = '/photos';

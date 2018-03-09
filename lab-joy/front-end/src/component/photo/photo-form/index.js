@@ -51,24 +51,24 @@ class PhotoForm extends React.Component {
     }
   }
 
-  handleChange(e) {
-    let {type, value, files} = e.target;
+  handleChange(event) {
+    let { type, value, files } = event.target;
+
     if (type === 'file') {
-      let error = this.handleValidate(e.target);
+      let error = this.handleValidate(event.target);
       if (!error) {
         fileToDataURL(files[0])
-          .then(preview => this.setState(preview));
+          .then(preview => this.setState({ preview }));
       }
       this.setState({
         photo: files[0],
         photoError: error,
         photoDirty: true,
       });
-    }
-    else {
+    } else {
       this.setState({
         description: value,
-        descriptionError: this.handleValidate(e.target),
+        descriptionError: this.handleValidate(event.target),
         descriptionDirty: true,
       });
     }
@@ -83,17 +83,17 @@ class PhotoForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} className="photo-form">
-        <img style={{width: '200px'}} src={this.state.preview} />
+        <img style={{width: '200px'}} src={this.state.preview} /><br />
 
-        <p>{this.state.photoError}</p>
-        <label>Photo</label>
+        <label>Photo</label> {this.state.photoError} <br />
 
         <input type="file" name="photo" onChange={this.handleChange} />
+        <br />
 
-        <p>{this.state.descriptionError}</p>
-        <label>Description</label>
+        <label>Description</label> {this.state.descriptionError}<br />
 
         <input type="text" name="description" value={this.state.description} onChange={this.handleChange} />
+        <br />
 
         <button type="submit">upload photo</button>
       </form>
