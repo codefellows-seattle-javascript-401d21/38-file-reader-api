@@ -16,7 +16,7 @@ Profile.validateReqFile = function (request) {
   if(request.files.length > 1){
     return util.removeMulterFiles(request.files)
       .then(() => {
-        throw createError(400, 'VALIDATION ERROR: only one file permited');
+        throw createError(400, 'VALIDATION ERROR: only one file permitted');
       });
   }
 
