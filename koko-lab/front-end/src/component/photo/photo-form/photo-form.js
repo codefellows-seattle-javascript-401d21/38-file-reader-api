@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const fileToDataURL = file => {
   return new Promise((resolve,reject) => {
@@ -13,7 +14,7 @@ const fileToDataURL = file => {
   });
 };
 
-export default class PhotoForm extends React.Component{
+class PhotoForm extends React.Component{
   constructor(props){
     super(props);
     this.emptyState = {
@@ -103,3 +104,5 @@ export default class PhotoForm extends React.Component{
     );
   }
 }
+
+export default PhotoForm;

@@ -1,7 +1,12 @@
 import superagent from 'superagent';
 
-export const createAction = photo => ({
+export const createPhoto = photo => ({
   type: 'CLIENT_PHOTO_CREATE',
+  payload: photo,
+});
+
+export const deletePhoto = photo => ({
+  type: 'CLIENT_PHOTO_DELETE',
   payload: photo,
 });
 
@@ -12,6 +17,6 @@ export const createActionRequest = (photo) => (dispatch) => {
     .field('description', photo.description)
     .attach('photo', photo.photo)
     .then (response =>{
-      return dispatch(createAction(response.body));
+      return dispatch(createPhoto(response.body));
     });
 };

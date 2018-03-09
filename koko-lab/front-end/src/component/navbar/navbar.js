@@ -8,14 +8,16 @@ import Avatar from 'react-avatar';
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      avatar: false,
-    };
   }
   render() {
+    console.log(this.action);
+    
     return (
       <header>
-        {/* <Avatar src={} name="avatar-photo"/> */}
+        {this.props.avatar ? 
+          <Avatar src={this.props.avatar.url} name="avatar-photo" />
+          : undefined
+        }
         <nav>
           <ul>
             {renderIf(!this.props.token,
@@ -37,7 +39,9 @@ class Navbar extends React.Component {
   }
 }
 
-let mapStateToProps = state => ({});
+let mapStateToProps = state => ({
+  avatar: state.photo[0],
+});
 let mapDispatchToProps = dispatch => ({
   tokenDelete: () => dispatch(tokenDelete),
 });

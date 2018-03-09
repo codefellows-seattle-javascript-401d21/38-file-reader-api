@@ -10,6 +10,8 @@ export default(state =[], {type, payload}) => {
   case 'CLIENT_PHOTO_CREATE':
     validatePic(payload);
     return [payload, ...(state)];
+  case 'CLIENT_PHOTO_DELETE': 
+    return state.filter(photo => photo._id !== payload._id);
   case 'TOKEN_DELETE': return [];
   default: return state;
   }
