@@ -33,7 +33,10 @@ class Landing extends React.Component {
   }
 }
 
-let mapStateToProps = () => ({});
+let mapStateToProps = state => ({
+  token: state.token,
+  photo: state.photo,
+});
 let mapDispatchToProps = dispatch => ({
   signup: user => dispatch(signupRequest(user)),
   signin: user => dispatch(signinRequest(user)),

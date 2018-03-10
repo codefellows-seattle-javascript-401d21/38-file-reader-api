@@ -10,6 +10,7 @@ describe('utils', () => {
 
   test('classToggler', () => {
     expect(typeof classToggler).toBe('function');
+    expect(classToggler({'a': true, 'b': false, 'c': true})).toBe('a c');
   });
 
   test('map', () => {

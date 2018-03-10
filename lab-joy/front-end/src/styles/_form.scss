@@ -43,7 +43,7 @@ form {
         font-weight: 900;
     }
 
-    input {
+    input, textarea {
         @extend %formelements;
 
         &::placeholder {

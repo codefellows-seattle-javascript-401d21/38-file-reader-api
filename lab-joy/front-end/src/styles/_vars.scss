@@ -7,3 +7,10 @@ nav {
         font-size: 1.2em;
     }
 }
+
+.gallery-image {
+    height: 200px;
+    width: auto;
+    border: solid 1px $primary-color;
+    margin: 0.5em;
+}

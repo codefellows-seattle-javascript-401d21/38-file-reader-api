@@ -18,7 +18,7 @@ class Navbar extends React.Component {
             )}
             {renderIf(this.props.token,
               <React.Fragment>
-                <li><Link to="/content">Content</Link></li>
+                <li><Link to="/dashboard">Photos</Link></li>
                 <li onClick={this.props.deleteToken}><Link to="/welcome/signin">Logout</Link></li>
               </React.Fragment>
             )}

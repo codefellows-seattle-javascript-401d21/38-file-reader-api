@@ -83,6 +83,7 @@ class PhotoForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} className="photo-form">
+        <h2>Upload Photos</h2>
         <img style={{width: '200px'}} src={this.state.preview} /><br />
 
         <label>Photo</label> {this.state.photoError} <br />
@@ -92,10 +93,10 @@ class PhotoForm extends React.Component {
 
         <label>Description</label> {this.state.descriptionError}<br />
 
-        <input type="text" name="description" value={this.state.description} onChange={this.handleChange} />
+        <textarea rows="3" cols="30" name="description" value={this.state.description} onChange={this.handleChange} />
         <br />
 
-        <button type="submit">upload photo</button>
+        <button type="submit">{this.props.buttonText}</button>
       </form>
     );
   }

@@ -6,6 +6,8 @@ const validatephoto = photo => {
 
 export default(state = [], {type, payload}) => {
   switch(type) {
+  case 'CLIENT_PHOTO_FETCHALL':
+    return payload;
   case 'CLIENT_PHOTO_CREATE': 
     validatephoto(payload);
     return [payload, ...state];

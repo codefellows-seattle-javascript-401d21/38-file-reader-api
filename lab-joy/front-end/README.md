@@ -20,10 +20,10 @@ From the front-end directory and with the back end running, use "npm run test" t
 The Main component renders the app to the page.
 
 ### App
-The App component creates a store and sets up Redux and routes. It renders either the Landing or Content components depending on if a token exists in the store. 
+The App component creates a store and sets up Redux and routes. It renders either the Landing or Dashboard components depending on if a token exists in the store. 
 
 ## Navbar
-The Navbar component renders either the "Signup" and "Signin" page links, or the "Content" and "Logout" page links depending on whether the user is logged in. It handles the deletion of the cookies and dispatching the deletion to the store state when the user logs out. 
+The Navbar component renders either the "Signup" and "Signin" page links, or the "Dashboard" and "Logout" page links depending on whether the user is logged in. It handles the deletion of the cookies and dispatching the deletion to the store state when the user logs out. 
 
 ## Landing
 The Landing component renders the AuthForm component and decides whether the to dispatch our sign in or sign up actions upon submission of the form in AuthForm. It records the route history to allow for back and forward functionality in the browser. 
@@ -31,5 +31,5 @@ The Landing component renders the AuthForm component and decides whether the to 
 ## AuthForm
 The AuthForm component renders the sign in and sign up form elements to the page. It handles the error handling for the form, sets default values to the form, and handles form submission.
 
-## Content
-The user is directed to the content component after being logged in. It is essentially the user's dashboard.
+## Dashboard
+The user is directed to the dashboard component after being logged in. It contains the photo form.

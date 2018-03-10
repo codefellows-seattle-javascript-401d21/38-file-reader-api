@@ -34,7 +34,7 @@ export default class AuthForm extends React.Component {
     e.preventDefault();
     let { username, email, password } = this.state;
     this.props.onComplete({ username, email, password })
-      .then(() => this.props.redirect('/content'))
+      .then(() => this.props.redirect('/dashboard'))
       .catch(error => this.setState({ error }));
 
     this.setState({
