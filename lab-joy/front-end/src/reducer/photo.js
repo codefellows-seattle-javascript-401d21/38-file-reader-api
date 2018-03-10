@@ -14,8 +14,6 @@ export default(state = [], {type, payload}) => {
   case 'CLIENT_PHOTO_DELETE':
     validatephoto(payload);
     return state.filter(photo => photo._id !== payload._id);
-  case 'TOKEN_DELETE':
-    return [];
   default:
     return state;
   }
