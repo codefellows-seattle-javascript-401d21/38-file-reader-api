@@ -22,11 +22,6 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    store.subscribe(() => {
-      // this.setState({
-      //   token: store.getState().token,
-      // });
-    });
     localStorage.signInError = false;
     localStorage.signUpError = false;
   }
@@ -41,9 +36,9 @@ export default class App extends React.Component {
             <React.Fragment>
               <Navbar token={token} />
               <Route exact path="/welcome/:auth" component={props =>
-                token ? <Redirect to="/dashboard" /> : <Landing {...props} />} />
+                store.getState().token ? <Redirect to="/dashboard" /> : <Landing {...props} />} />
               <Route exact path="/dashboard" component={() =>
-                token
+                store.getState().token
                   ? <Dashboard token={token} />
                   : <Redirect to="/welcome/signin" />}
               />

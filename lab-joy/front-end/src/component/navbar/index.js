@@ -29,7 +29,9 @@ class Navbar extends React.Component {
   }
 }
 
-let mapStateToProps = state => ({});
+let mapStateToProps = state => ({
+  token: state.token,
+});
 let mapDispatchToProps = dispatch => ({
   deleteToken: () => dispatch(tokenDelete()),
 });

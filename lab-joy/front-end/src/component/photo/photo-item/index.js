@@ -32,9 +32,10 @@ class PhotoItem extends React.Component {
 
   render() {
     return (
-      <span className="photo-item" key={this.props.photo._id} onDoubleClick={this.handleDelete}>
+      <div className="photo-item clearfix" key={this.props.photo._id}>
         <img className="gallery-image" src={this.props.photo.url} />
-      </span>
+        <p className="photo-description">[<a className="delete-photo" onDoubleClick={this.handleDelete}>&times;</a>] {this.props.photo.description}</p>
+      </div>
     );
   }
 }

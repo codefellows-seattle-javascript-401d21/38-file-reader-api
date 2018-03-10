@@ -15,7 +15,8 @@ class Dashboard extends React.Component {
         <h1>Photos</h1>
         <PhotoForm onComplete={this.props.createPhoto} buttonText="upload photo" />
         
-        <h2>Gallery</h2>
+        <h2>Your Gallery</h2>
+        <p className="gallery-instructions">Double click on the [&times;] to delete a photo.</p>
         {
           this.props.photo.length > 0 ?
             this.props.photo.map(photo => <PhotoItem key={photo._id} photo={photo} buttonText="delete photo" />)

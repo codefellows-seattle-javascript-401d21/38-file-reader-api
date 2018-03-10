@@ -8,9 +8,34 @@ nav {
     }
 }
 
+.gallery-instructions {
+    font-size: 0.8em;
+    margin: 0.5em;
+}
+
+.photo-item {
+    border: solid 1px $primary-color;
+    padding: 1em;
+    margin: 0.2em;
+    display: inline-block;
+    height: 310px;
+    width: 350px;
+    text-align: center;
+}
+
 .gallery-image {
-    height: 200px;
+    height: 220px;
     width: auto;
+    max-width: 300px;
     border: solid 1px $primary-color;
     margin: 0.5em;
+    padding: 0.1em;
+}
+
+.photo-description {
+    font-size: 0.8em;
+}
+
+.delete-photo {
+    font-size: 1.5em;
 }
