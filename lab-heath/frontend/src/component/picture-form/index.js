@@ -1,3 +1,5 @@
+import './_picture-form.scss';
+
 import React from 'react';
 
 const fileToDataURL = file => {
@@ -97,7 +99,7 @@ class PictureForm extends React.Component{
         onSubmit={this.handleSubmit}
         className='photo-form'>
 
-        <img style={{width:'200px'}} src={this.state.preview} />
+        <img className="preview" style={{width:'200px'}} src={this.state.preview} />
 
         <p>{this.state.photoError}</p>
         <label>Photo</label>
