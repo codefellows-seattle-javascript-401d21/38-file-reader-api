@@ -2,7 +2,9 @@
 Joy Hou, March 6, 2018
 
 ## Description
-We are taking an already built back end and building a front end for it. The app allows the user to sign up and sign in and routes the user to a content page upon successful sign up / sign in. CRUD requests are made from the front end to the back end. The user data is stored and the user is validated in the back end. We are receiving a token back from the back end upon successful sign in / sign up, and we are storing that token in local storage and as a cookie. Upon log out, we clear local storage and our cookie. 
+We are taking an already built back end and building a front end for it. The app allows the user to sign up and sign in and routes the user to a dashboard page upon successful sign up / sign in. CRUD requests are made from the front end to the back end. The user data is stored and the user is validated in the back end. We are receiving a token back from the back end upon successful sign in / sign up, and we are storing that token in local storage and as a cookie. Upon log out, we clear local storage and our cookie. 
+
+After sign in, the user is directed to the dashboard page, which allows the user to upload photos. The photos are stored in a AWS s3 bucket and the information for the photo is stored in MongoDB on the back end. 
 
 ## .dev.env
 CDN_URL=/
