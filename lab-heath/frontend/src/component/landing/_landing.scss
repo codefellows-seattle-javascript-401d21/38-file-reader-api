@@ -1,0 +1,29 @@
+.auth {
+  border-radius: 3px;
+  width: 200px;
+  height: 30px;
+  margin-left: 20px;
+}
+
+.enter {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 30px;
+  border-radius: 30px;
+  outline: none;
+  background-color: limegreen;
+  margin-top: 40px;
+}
+
+.enter:hover {
+  background-color: rgb(58, 131, 58);
+}
+
+.logo {
+  margin-top: 200px;
+}
+
+.auth-form {
+  text-align: center;
+}
