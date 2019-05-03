@@ -1,0 +1,2 @@
+# Lab 38 - File Reader API
+This lab continues on from lab 37 on auth/cookies and merges a front end created with React and Redux with a back end from our lab demo code. More descriptive READMEs in the back-end and front-end directories.
